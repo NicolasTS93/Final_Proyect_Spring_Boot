@@ -7,6 +7,7 @@ import com.example.info2020.Final_Project.controller.response.PostDto;
 import java.util.List;
 
 public interface PostService {
+
     String createPost(CreatePost body);
 
     List<PostDto> getPots();

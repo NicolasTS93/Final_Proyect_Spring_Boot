@@ -12,7 +12,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"facu\",\r\n    \"lastname\" : \"Trinidad Salomon\",\r\n    \"email\" : \"ncahsh@gmail.com\",\r\n    \"password\" : \"1234nico\",\r\n    \"city\" : \"corrientes\",\r\n    \"state\" : \"Chaco\",\r\n    \"country\" : \"Argentina\"\r\n}\r\n",
+					"raw": "{\r\n    \"name\": \"Nicolas\",\r\n    \"lastname\" : \"Trinidad Salomon\",\r\n    \"email\" : \"ncahsqweh@gmail.com\",\r\n    \"password\" : \"1234nico\",\r\n    \"city\" : \"Resistencia\",\r\n    \"state\" : \"Chaco\",\r\n    \"country\" : \"Argentina\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -34,31 +34,50 @@
 			"response": []
 		},
 		{
-			"name": "Update user ",
+			"name": "Update user by id",
 			"request": {
 				"method": "PUT",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Agustin\",\r\n    \"lastname\" : \"Trinidad\",\r\n    \"email\" : \"hola@gmail.com\",\r\n    \"password\" : \"1234nico\",\r\n    \"city\" : \"Resistencia\",\r\n    \"state\" : \"Chaco\",\r\n    \"country\" : \"Argentina\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:8080/users",
+					"raw": "http://localhost:8080/users/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"users"
+						"users",
+						"1"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Delete user",
+			"name": "Delete user by id",
 			"request": {
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "http://localhost:8080/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"1"
+					]
 				}
 			},
 			"response": []
@@ -160,7 +179,303 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Creat Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\" : \"Informatorio 2020\",\r\n    \"description\" : \"Descripcion\",\r\n    \"content\" : \"Contenido del POST Informatorio 2020\",\r\n    \"authorId\" : \"1\",\r\n    \"published\" : \"true\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/posts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update posts by id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"title\" : \"Informatorio 2020\",\r\n    \"description\" : \"Descripcion\",\r\n    \"content\" : \"Nuevo contenido modificado del POST Informatorio 2020\",\r\n    \"authorId\" : \"1\",\r\n    \"published\" : \"true\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/posts/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete post by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/posts/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/posts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Post by Key Word",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/posts?keyWord=informatorio",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts"
+					],
+					"query": [
+						{
+							"key": "keyWord",
+							"value": "informatorio"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Posts by isPublished",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/posts?notPublished=true",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts"
+					],
+					"query": [
+						{
+							"key": "notPublished",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter posts by key word and isPublished",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/posts?keyWord=informatorio&notPublished=true",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts"
+					],
+					"query": [
+						{
+							"key": "keyWord",
+							"value": "informatorio"
+						},
+						{
+							"key": "notPublished",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Comment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"authorID\" : \"1\",\r\n    \"postId\" : \"1\",\r\n    \"comment\" : \"Este es un comentario de prueba\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/comment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all comments by post id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/comment?postId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comment"
+					],
+					"query": [
+						{
+							"key": "postId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filte comment by limit",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/comment?postId=1&limit=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comment"
+					],
+					"query": [
+						{
+							"key": "postId",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update comment",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/comment/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comment",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete comment",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/comment/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comment",
+						"1"
+					]
+				}
+			},
+			"response": []
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }

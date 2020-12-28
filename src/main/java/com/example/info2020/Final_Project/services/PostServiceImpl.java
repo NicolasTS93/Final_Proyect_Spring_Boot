@@ -48,7 +48,7 @@ public class PostServiceImpl implements PostService {
             return "Post creado con exito";
         }catch (Exception e){
             System.out.println("Error al publicar el Post: " + e);
-            return "No se pudo crear el Post";
+            return "No se pudo crear el Post correctamente";
         }
     }
 
